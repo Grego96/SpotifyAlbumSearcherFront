@@ -1,1 +1,14 @@
+.spotiNav {
+  background-color: rgb(0, 0, 0);
+}
 
+.spotiMain {
+  min-height: 100vh;
+  background: rgb(18, 18, 18);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(17, 17, 17, 1) 31%,
+    rgba(0, 74, 89, 1) 100%
+  );
+}

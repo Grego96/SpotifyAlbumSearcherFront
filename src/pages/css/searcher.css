@@ -1,9 +1,25 @@
-.spotiNav {
-  height: 200px;
-  background-color: rgb(0, 0, 0);
+.artistSearchrInput {
+  width: 300px;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 7px;
+  border: none;
+  box-sizing: border-box;
 }
 
-.spotiMain {
-  height: 200px;
-  background-color: antiquewhite;
+.searchButton {
+  margin-left: 10px;
+}
+
+.lupa {
+  margin-left: 5px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.artistName {
+  margin-top: 35px;
+  color: white;
+  font-size: 4rem;
 }
