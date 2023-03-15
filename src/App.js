@@ -15,8 +15,14 @@ function App() {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-2 spotiNav d-none d-md-block">
-          <Link to="/search">Search</Link>
-          <Link to="/">Home</Link>
+          <div className="buttonscontainer">
+            <Link className="navButtons" to="/">
+              Home
+            </Link>
+            <Link className="navButtons" to="/search">
+              Search
+            </Link>
+          </div>
         </div>
         <div className="col-md-10 spotiMain">
           <Navbar bg="light" expand="lg" className="d-block d-md-none">

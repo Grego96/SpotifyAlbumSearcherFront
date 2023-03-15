@@ -1,0 +1,28 @@
+.albumCard {
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(48, 48, 48);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.albumCard h5 {
+  color: rgb(211, 211, 211);
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.albumCard img {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.albumCard p {
+  color: rgba(177, 177, 177, 0.596);
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
