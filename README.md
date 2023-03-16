@@ -15,13 +15,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         resultado o no y por lo tanto también se guardan los otros datos.
 
 
-        <b> Importante:</b> En el back se debe proporcionar el ClientId y el
+   ## Importante: En el back se debe proporcionar el ClientId y el
         ClientIdSecret obtenidos en
         https://developer.spotify.com/dashboard/login ya que se eligió como
         Authorization Code Flow el flujo "Client credentials".
 
 
-## Available Scripts
+ Available Scripts
 
 In the project directory, you can run:
 
