@@ -1,16 +1,20 @@
 import React from "react";
 import "./css/searcher.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AlbumCard from "../components/AlbumCard";
+import { Audio } from "react-loader-spinner";
 
 function Searcher() {
   const [albums, setAlbums] = useState([]);
   const [inputName, setInputName] = useState("");
   const [artistName, setArtistName] = useState("");
+  const [load, setLoad] = useState(false);
 
   async function getAlbums(artistName) {
     try {
+      setLoad(true);
+      setArtistName("");
       const result = await axios({
         method: "GET",
         baseURL: `http://localhost:8000/search?artistName=${artistName}`,
@@ -18,14 +22,13 @@ function Searcher() {
       console.log(result);
       setAlbums(result.data.data.items);
       setArtistName(result.data.artistName);
+      setLoad(false);
       console.log(albums);
     } catch (error) {
+      setArtistName("Artist not found");
       console.log(error);
     }
   }
-
-  // useEffect(() => {
-  // }, [albums]);
 
   return (
     <div className="container-fluid p-3">
@@ -54,21 +57,35 @@ function Searcher() {
       ></img>
       {/* <button className="searchButton">Search</button> */}
       <div className="info">
-        <h1 className="artistName">{artistName}</h1>
+        <h2 className="artistName">{artistName}</h2>
       </div>
       <div className="albumsContainer container-fluid">
-        <div className="row">
-          {albums.map((album) => {
-            return (
-              <div
-                className="col-sm-12 col-md-4 col-lg-4 col-xl-2 mb-5"
-                key={album.id}
-              >
-                <AlbumCard album={album} />
-              </div>
-            );
-          })}
-        </div>
+        {load ? (
+          <div className="loaderContainer">
+            <Audio
+              height="80"
+              width="80"
+              radius="9"
+              color="green"
+              ariaLabel="three-dots-loading"
+              wrapperStyle
+              wrapperClass
+            />
+          </div>
+        ) : (
+          <div className="row">
+            {albums.map((album) => {
+              return (
+                <div
+                  className="col-sm-12 col-md-4 col-lg-4 col-xl-2 mb-5"
+                  key={album.id}
+                >
+                  <AlbumCard album={album} />
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
